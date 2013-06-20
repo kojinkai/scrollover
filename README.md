@@ -24,8 +24,11 @@ and is designed to simply keep the plugin slightly more lightweight.
 Options
 -------
 
-Currently, the only options are the classname you wish to add or remove (defaults to "scrolled") and a callback function when the scroll event takes place.   Options can be overridden by passing an object literal like so:
+Currently, the only options are the classname you wish to add or remove (defaults to "scrolled") and a callback function (onScrollStart) which is fired when the scroll event takes place.   Options can be overridden by passing an object literal like so:
 
     $('#main-nav').scrollover({
-      classname: "myclassname"
+      classname: "myclassname",
+      onScrollStart: function() {
+      	// Do some stuff here ...
+      }
     });
