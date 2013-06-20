@@ -1,37 +1,40 @@
-(function($){
+;(function($){
    
    $.fn.scrollover = function( options ) {
 
-      var opts = $.extend( {}, $.fn.scrollover.defaults, options );
-      
-      $.fn.scrollover.defaults = {
+      var defaults = {
         
         // Our Settings.
         classname:        "scrolled",
-        onScrollStart:    function() {},
-        onScrollComplete: function() {}
+        onScrollStart:    function() {}
 
       };
 
+      var settings = $.extend( defaults, options );
+
+
+      // Begin plugin code
+      
+      // Cache $(this)
       var $this = $(this);
 
+      // Instance variables
       var nav_height = $this.height(),
           offset = $this.scrollTop();
 
+
       function scrolled_switch() {
         if ( offset > 0 ) {
-          console.log("offset top is gt 0");
-          $this.addClass( $.fn.scrollover.defaults.classname );
+          $this.addClass( defaults.classname );
         }
 
         else {
-          console.log("offset top is 0");
-          $this.removeClass( $.fn.scrollover.defaults.classname );
+          $this.removeClass( defaults.classname );
         }
       }
 
       $(window).on("scroll", function() {
-        $.fn.scrollover.defaults.onScrollStart();
+        defaults.onScrollStart();
         
         // Update our scrollTop value
         offset = $(this).scrollTop();
