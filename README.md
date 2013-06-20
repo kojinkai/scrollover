@@ -16,10 +16,10 @@ a single, main navigation object, like so
     
     $('#main-nav').scrollover();
 
-*The plugin only works on a jQuery object that returns a single element*
+Please note: **The plugin currently only works on a jQuery object that returns a single element**
 
 This is simply so you can return a single object rather than looping over a jQuery set
-and is designed to simply keep the plugin lightweight.
+and is designed to simply keep the plugin slightly more lightweight.
 
 Options
 -------
